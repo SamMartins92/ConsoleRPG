@@ -13,7 +13,6 @@ namespace RPGame
             Player MainPlayer = new Player();
 
             MainPlayer.MainWeapon = new Weapon(MainPlayer);
-
         }
     }
 }

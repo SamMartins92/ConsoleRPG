@@ -8,6 +8,5 @@ namespace RPGame
 {
     internal class Human
     {
-        
     }
 }
