@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGame
 {
-    internal class Enemy
+    public class Enemy
     {
         public int health;
         public int strength;

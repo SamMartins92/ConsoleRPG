@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGame
 {
-    internal class Player 
+    public class Player 
     {
         string name;
         int age;

@@ -14,7 +14,7 @@ namespace RPGame
 
             MainPlayer.PickUpWeapon(MainPlayer, Weapon.WeaponType.Axe);
 
-            StatusManagement.AddStrength(MainPlayer, 10);
+            StatusManagment.AddStrength(MainPlayer, 10);
 
             Console.WriteLine(MainPlayer._strength.ToString());
 

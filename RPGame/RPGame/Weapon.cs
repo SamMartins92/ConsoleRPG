@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGame
 {
-    internal class Weapon
+    public class Weapon
     {
         public enum WeaponType
         {
