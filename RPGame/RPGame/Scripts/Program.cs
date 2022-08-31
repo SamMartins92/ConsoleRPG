@@ -12,7 +12,13 @@ namespace RPGame
         {
             Player MainPlayer = new Player();
 
-            MainPlayer.MainWeapon = new Weapon(MainPlayer);
+            MainPlayer.PickUpWeapon(MainPlayer, Weapon.WeaponType.Axe);
+
+            StatusManagement.AddStrength(MainPlayer, 10);
+
+            Console.WriteLine(MainPlayer._strength.ToString());
+
+            Console.WriteLine(MainPlayer.MainWeapon.weaponType.ToString());
         }
     }
 }
