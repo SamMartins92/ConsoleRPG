@@ -8,7 +8,28 @@ namespace RPGame
 {
     public class Enemy
     {
+        private string name;
         public int health;
         public int strength;
+        private int level;
+
+        public string _name
+        {
+            get { return name; }
+            set
+            {
+                if (value != null)
+                {
+                    name = value;
+                } 
+            } 
+        }
+
+        public void SetName(string myName)
+        {
+            _name = myName;
+        }
+
+
     }
 }

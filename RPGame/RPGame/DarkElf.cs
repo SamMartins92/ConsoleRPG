@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace RPGame
 {
-    public class Environment
+    internal class DarkElf : Enemy
     {
+        public DarkElf()
+        {
+            _name = "Dark Elf";
+        }
     }
 }

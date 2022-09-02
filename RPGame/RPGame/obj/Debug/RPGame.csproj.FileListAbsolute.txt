@@ -1,0 +1,8 @@
+C:\WorkInProgress\RPGameConsole\RPGame\RPGame\bin\Debug\RPGame.exe.config
+C:\WorkInProgress\RPGameConsole\RPGame\RPGame\bin\Debug\RPGame.exe
+C:\WorkInProgress\RPGameConsole\RPGame\RPGame\bin\Debug\RPGame.pdb
+C:\WorkInProgress\RPGameConsole\RPGame\RPGame\obj\Debug\RPGame.csproj.AssemblyReference.cache
+C:\WorkInProgress\RPGameConsole\RPGame\RPGame\obj\Debug\RPGame.csproj.SuggestedBindingRedirects.cache
+C:\WorkInProgress\RPGameConsole\RPGame\RPGame\obj\Debug\RPGame.csproj.CoreCompileInputs.cache
+C:\WorkInProgress\RPGameConsole\RPGame\RPGame\obj\Debug\RPGame.exe
+C:\WorkInProgress\RPGameConsole\RPGame\RPGame\obj\Debug\RPGame.pdb

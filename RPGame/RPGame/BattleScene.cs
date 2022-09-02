@@ -6,15 +6,31 @@ using System.Threading.Tasks;
 
 namespace RPGame
 {
-    internal class BattleScene
+    public class BattleScene
     {
-        Enemy currentEnemy;
+        Environment currentEnvironment;
+        public List<Enemy> enemyGroup = new List<Enemy>();
 
 
-
-        public void InstantiateBattleScene(Enemy enemy)
+        public BattleScene(int playerLevel)
         {
-
+            switch (playerLevel)
+            {
+                case int n when (n <= 5):
+                    CreateEnemyGroup(playerLevel);
+                    break;
+                default:
+                    break;
+            }
         }
+
+        void CreateEnemyGroup(int playerLevel)
+        {
+            for (int i = 0; i < playerLevel; i++)
+            {
+                enemyGroup.Add(new Ogre());
+            }
+        }
+
     }
 }

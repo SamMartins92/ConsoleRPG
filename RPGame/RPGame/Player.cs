@@ -13,6 +13,7 @@ namespace RPGame
         int strength;
         int health;
         int movementSpeed;
+        int level;
 
         public bool isArmed;
 

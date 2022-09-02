@@ -16,9 +16,14 @@ namespace RPGame
 
             StatusManagment.AddStrength(MainPlayer, 10);
 
-            Console.WriteLine(MainPlayer._strength.ToString());
+            BattleScene FisrtBattleScene = new BattleScene(1);
 
-            Console.WriteLine(MainPlayer.MainWeapon.weaponType.ToString());
+            List<Enemy> EnemyGroup = new List<Enemy>();
+
+            EnemyGroup.Add(new Ogre());
+            EnemyGroup.Add(new DarkElf());
+
+            ShowMensage.DescribeEnemies(FisrtBattleScene);
         }
     }
 }
