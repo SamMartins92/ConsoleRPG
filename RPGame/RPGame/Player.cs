@@ -13,7 +13,7 @@ namespace RPGame
         int strength;
         int health;
         int movementSpeed;
-        int level;
+        public int level;
 
         public bool isArmed;
 
@@ -57,6 +57,7 @@ namespace RPGame
         public void PickUpWeapon(Player player, Weapon.WeaponType weaponType)
         {
             MainWeapon = new Weapon(player, weaponType);
+            CharacterManagment.AddStrength(player, 10);
         }
     }
 }

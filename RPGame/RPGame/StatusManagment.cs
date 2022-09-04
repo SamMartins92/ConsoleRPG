@@ -6,11 +6,24 @@ using System.Threading.Tasks;
 
 namespace RPGame
 {
-    public static class StatusManagment
+    public static class CharacterManagment
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="value"></param>
         static public void AddStrength(Player player, int value)
         {
             player._strength += value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        static public void CustomizeCharacter()
+        {
+
         }
     }
 }

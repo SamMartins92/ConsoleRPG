@@ -12,5 +12,7 @@ namespace RPGame
         {
             _name = "Dark Elf";
         }
+
+       
     }
 }

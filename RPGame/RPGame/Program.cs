@@ -12,18 +12,10 @@ namespace RPGame
         {
             Player MainPlayer = new Player();
 
-            MainPlayer.PickUpWeapon(MainPlayer, Weapon.WeaponType.Axe);
+            ShowMensage.IntroduceStartUpScene(MainPlayer);
+            ShowMensage.IntroduceBattleScene(MainPlayer);
 
-            StatusManagment.AddStrength(MainPlayer, 10);
 
-            BattleScene FisrtBattleScene = new BattleScene(1);
-
-            List<Enemy> EnemyGroup = new List<Enemy>();
-
-            EnemyGroup.Add(new Ogre());
-            EnemyGroup.Add(new DarkElf());
-
-            ShowMensage.DescribeEnemies(FisrtBattleScene);
         }
     }
 }
