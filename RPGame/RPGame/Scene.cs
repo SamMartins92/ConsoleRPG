@@ -12,9 +12,9 @@ namespace RPGame
 
         public List<Enemy> enemyGroup = new List<Enemy>();
 
-        public Scene(Player player)
+        public Scene()
         {
-            switch (player.level)
+            switch (Player.Instance.level)
             {
                 case int n when (n <= 5):
                     CreateEnemyGroup(3);

@@ -8,6 +8,25 @@ namespace RPGame
 {
     public class Player 
     {
+        //Create a singleton pattern
+        private static Player instance = null;
+        private static readonly object padlock = new object();
+
+        public static Player Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new Player();
+                    }
+                    return instance;
+                }
+            }
+        }
+
         string name;
         int age;
         int strength;
@@ -36,28 +55,28 @@ namespace RPGame
         /// </summary>
         /// <param name="attacker"></param>
         /// <param name="enemy"></param>
-        void Attack(Player player, Enemy enemy)
+        void Attack(Enemy enemy)
         {
-            enemy.health -= player.strength;
+            enemy.health -= Player.Instance.strength;
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="player"></param>
         /// <param name="enemy"></param>
-        void Defend(Player player, Enemy enemy)
+        void Defend(Enemy enemy)
         {
-            player.health -= enemy.strength;
+            Player.Instance.health -= enemy.strength;
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="player"></param>
         /// <param name="weaponType"></param>
-        public void PickUpWeapon(Player player, Weapon.WeaponType weaponType)
+        public void PickUpWeapon(Weapon.WeaponType weaponType)
         {
-            MainWeapon = new Weapon(player, weaponType);
-            CharacterManagment.AddStrength(player, 10);
+            MainWeapon = new Weapon(weaponType);
+            CharacterManagment.AddStrength(10);
         }
     }
 }

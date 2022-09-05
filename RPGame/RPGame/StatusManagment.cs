@@ -13,9 +13,9 @@ namespace RPGame
         /// </summary>
         /// <param name="player"></param>
         /// <param name="value"></param>
-        static public void AddStrength(Player player, int value)
+        static public void AddStrength(int value)
         {
-            player._strength += value;
+            Player.Instance._strength += value;
         }
 
         /// <summary>

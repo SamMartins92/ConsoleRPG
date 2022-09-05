@@ -24,17 +24,9 @@ namespace RPGame
         /// <summary>
         /// 
         /// </summary>
-        public static void CustomizeCharacter()
+        public static void IntroduceBattleScene()
         {
-            Console.WriteLine();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static void IntroduceBattleScene(Player player)
-        {
-            Scene FisrtBattleScene = new Scene(player);
+            Scene FisrtBattleScene = new Scene();
 
             ShowMensage.IntroduceEnemies(FisrtBattleScene);
         }
@@ -42,9 +34,17 @@ namespace RPGame
         /// <summary>
         /// 
         /// </summary>
-        public static void IntroduceStartUpScene(Player player)
+        public static void IntroduceStartUpScene()
         {
-            player.PickUpWeapon(player, Weapon.WeaponType.Axe);
+            Player.Instance.PickUpWeapon(Weapon.WeaponType.Axe);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static void CustomizeCharacter()
+        {
+            Console.WriteLine();
         }
     }
 }

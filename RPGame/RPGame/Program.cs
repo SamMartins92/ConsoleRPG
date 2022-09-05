@@ -10,12 +10,8 @@ namespace RPGame
     {
         static void Main(string[] args)
         {
-            Player MainPlayer = new Player();
-
-            ShowMensage.IntroduceStartUpScene(MainPlayer);
-            ShowMensage.IntroduceBattleScene(MainPlayer);
-
-
+            ShowMensage.IntroduceStartUpScene();
+            ShowMensage.IntroduceBattleScene();
         }
     }
 }

@@ -22,9 +22,9 @@ namespace RPGame
 
         public WeaponType weaponType;
         
-        public Weapon(Player player, WeaponType weaponType)
+        public Weapon(WeaponType weaponType)
         {
-            player.isArmed = true;
+            Player.Instance.isArmed = true;
 
             switch (weaponType)
             {
