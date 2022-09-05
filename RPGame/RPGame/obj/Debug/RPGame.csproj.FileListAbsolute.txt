@@ -6,3 +6,6 @@ C:\WorkInProgress\RPGameConsole\RPGame\RPGame\obj\Debug\RPGame.csproj.SuggestedB
 C:\WorkInProgress\RPGameConsole\RPGame\RPGame\obj\Debug\RPGame.csproj.CoreCompileInputs.cache
 C:\WorkInProgress\RPGameConsole\RPGame\RPGame\obj\Debug\RPGame.exe
 C:\WorkInProgress\RPGameConsole\RPGame\RPGame\obj\Debug\RPGame.pdb
+C:\WorkInProgress\RPGameConsole\RPGame\RPGame\bin\Debug\nunit.framework.dll
+C:\WorkInProgress\RPGameConsole\RPGame\RPGame\bin\Debug\nunit.framework.xml
+C:\WorkInProgress\RPGameConsole\RPGame\RPGame\obj\Debug\RPGame.csproj.CopyComplete
