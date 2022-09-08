@@ -76,7 +76,7 @@ namespace RPGame
         public void PickUpWeapon(Weapon.WeaponType weaponType)
         {
             MainWeapon = new Weapon(weaponType);
-            CharacterManagment.AddStrength(10);
+            CharacterManagment.AddStrength(9);
         }
     }
 }
