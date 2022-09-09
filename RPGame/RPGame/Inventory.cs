@@ -8,5 +8,7 @@ namespace RPGame
 {
     internal class Inventory
     {
+        private int capacity;
+        private bool maxSize;
     }
 }
