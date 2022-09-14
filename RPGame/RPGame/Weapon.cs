@@ -8,6 +8,12 @@ namespace RPGame
 {
     public class Weapon
     {
+        
+        public string name;
+        int power;
+        int durability;
+        public WeaponType thisWeaponType;
+
         public enum WeaponType
         {
             Axe,
@@ -16,31 +22,50 @@ namespace RPGame
             Daggers
         }
 
-        public string name;
-        int power;
-        int durability;
-
-        public WeaponType weaponType;
-        
-        public Weapon(WeaponType weaponType)
+        /// <summary>
+        /// Create a specific weapon
+        /// </summary>
+        /// <param name="myWeaponType"></param>
+        public Weapon(WeaponType myWeaponType)
         {
             Player.Instance.isArmed = true;
 
-            switch (weaponType)
+            switch (myWeaponType)
             {
                 case WeaponType.Axe:
                     {
+                        thisWeaponType = WeaponType.Axe;
                         name = "";
                         power = 0;
                         break;
                     }
                 case WeaponType.Sword:
                     {
+                        thisWeaponType = WeaponType.Sword;
                         name = "";
+                        power = 0;
+                        break;
+                    }
+                case WeaponType.Bow:
+                    {
+                        thisWeaponType = WeaponType.Bow;
+                        name = "";
+                        power = 0;
+                        break;
+                    }
+                case WeaponType.Daggers:
+                    {
+                        thisWeaponType = WeaponType.Daggers;
                         power = 0;
                         break;
                     }
             }
         }
+
+        public Weapon()
+        {
+            WeaponType[] randomWeaponType = new WeaponType[] { WeaponType.Axe, WeaponType.Sword, WeaponType.Bow, WeaponType.Daggers};
+            thisWeaponType = randomWeaponType[Scene.random.Next(0, randomWeaponType.Length)];
+        }  
     }
 }

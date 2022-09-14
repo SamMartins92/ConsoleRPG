@@ -8,6 +8,8 @@ namespace RPGame
 {
     public class Scene
     {
+        public static Random random = new Random();
+
         Environment currentEnvironment;
 
         public List<Enemy> enemyGroup = new List<Enemy>();
@@ -30,8 +32,6 @@ namespace RPGame
         /// <param name="dificult"></param>
         void CreateEnemyGroup(int dificult)
         {
-            Random random = new Random();
-
             for (int i = 0; i < dificult; i++)
             {
                 enemyGroup.Add(Enemy.enemyRaces[random.Next(0, Enemy.enemyRaces.Length)]);

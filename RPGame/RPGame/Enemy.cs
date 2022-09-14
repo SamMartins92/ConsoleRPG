@@ -12,6 +12,7 @@ namespace RPGame
         public int health;
         public int strength;
         private int level = 1;
+        public Weapon mainWeapon;
 
         public string _name
         {
@@ -50,6 +51,8 @@ namespace RPGame
             new DarkElf(),
         };
 
+
+
         public int _level
         {
             get
@@ -58,6 +61,13 @@ namespace RPGame
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public Enemy()
+        {
+            mainWeapon = new Weapon();
+        }
 
     }
 }
