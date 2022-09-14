@@ -11,6 +11,7 @@ namespace RPGame
         public DarkElf()
         {
             _name = "Dark Elf";
+
         }
 
        

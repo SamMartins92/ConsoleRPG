@@ -25,6 +25,17 @@ namespace RPGame
             } 
         }
 
+        public int _health
+        {
+            get { return health; }
+            set
+            {
+                if (value > -1 && value < 101)
+                {
+                    health = value;
+                }
+            } }
+
         public void SetName(string myName)
         {
             _name = myName;

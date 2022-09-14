@@ -17,7 +17,7 @@ namespace RPGame
 
             foreach (var enemy in battleScene.enemyGroup)
             {
-                Console.WriteLine("There is an " + enemy._name + " lvl: " + enemy._level);
+                Console.WriteLine("There is an " + enemy._name + "Health: "+ enemy._health + " lvl: " + enemy._level);
             }
         }
 

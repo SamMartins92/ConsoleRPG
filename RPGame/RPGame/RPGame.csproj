@@ -53,6 +53,7 @@
     <Compile Include="Enemy.cs" />
     <Compile Include="Environment.cs" />
     <Compile Include="Human.cs" />
+    <Compile Include="Inventory.cs" />
     <Compile Include="Ogre.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />

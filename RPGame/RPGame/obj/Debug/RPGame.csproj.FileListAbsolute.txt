@@ -9,3 +9,14 @@ C:\WorkInProgress\RPGameConsole\RPGame\RPGame\obj\Debug\RPGame.pdb
 C:\WorkInProgress\RPGameConsole\RPGame\RPGame\bin\Debug\nunit.framework.dll
 C:\WorkInProgress\RPGameConsole\RPGame\RPGame\bin\Debug\nunit.framework.xml
 C:\WorkInProgress\RPGameConsole\RPGame\RPGame\obj\Debug\RPGame.csproj.CopyComplete
+C:\WorkInProgress\RPGame\RPGame\RPGame\bin\Debug\RPGame.exe.config
+C:\WorkInProgress\RPGame\RPGame\RPGame\bin\Debug\RPGame.exe
+C:\WorkInProgress\RPGame\RPGame\RPGame\bin\Debug\RPGame.pdb
+C:\WorkInProgress\RPGame\RPGame\RPGame\bin\Debug\nunit.framework.dll
+C:\WorkInProgress\RPGame\RPGame\RPGame\bin\Debug\nunit.framework.xml
+C:\WorkInProgress\RPGame\RPGame\RPGame\obj\Debug\RPGame.csproj.AssemblyReference.cache
+C:\WorkInProgress\RPGame\RPGame\RPGame\obj\Debug\RPGame.csproj.SuggestedBindingRedirects.cache
+C:\WorkInProgress\RPGame\RPGame\RPGame\obj\Debug\RPGame.csproj.CoreCompileInputs.cache
+C:\WorkInProgress\RPGame\RPGame\RPGame\obj\Debug\RPGame.csproj.CopyComplete
+C:\WorkInProgress\RPGame\RPGame\RPGame\obj\Debug\RPGame.exe
+C:\WorkInProgress\RPGame\RPGame\RPGame\obj\Debug\RPGame.pdb
