@@ -30,7 +30,8 @@ namespace RPGame
         string name;
         int age;
         int strength;
-        int health;
+        int defense;
+        int health = 100;
         int movementSpeed;
         public int level;
 
@@ -43,9 +44,13 @@ namespace RPGame
             set { if (strength < 101 && strength > -1) { strength = value; } }
         }
         public int _age { get { return age; } private set { age = value; } }
+        public int _level { get { return level; } private set { level = value; } }
+        public int _health { get { return health; } set { health = value; } }
+
+        public int _defense { get { return defense; } set { defense = value; } }
         public int _movementSpeed { get { return movementSpeed; } private set { movementSpeed = value; } }
 
-        public Weapon MainWeapon;
+        public Weapon mainWeapon;
         public Weapon SecondaryWeapon;
 
         //Combat actions
@@ -55,7 +60,7 @@ namespace RPGame
         /// </summary>
         /// <param name="attacker"></param>
         /// <param name="enemy"></param>
-        void Attack(Enemy enemy)
+        public void Attack(Enemy enemy)
         {
             enemy.health -= Player.Instance.strength;
         }
@@ -75,7 +80,7 @@ namespace RPGame
         /// <param name="weaponType"></param>
         public void PickUpWeapon(Weapon.WeaponType weaponType)
         {
-            MainWeapon = new Weapon(weaponType);
+            mainWeapon = new Weapon(weaponType);
             CharacterManagment.AddStrength(10);
         }
     }

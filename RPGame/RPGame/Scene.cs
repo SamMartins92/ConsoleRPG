@@ -34,7 +34,20 @@ namespace RPGame
         {
             for (int i = 0; i < dificult; i++)
             {
-                enemyGroup.Add(Enemy.enemyRaces[random.Next(0, Enemy.enemyRaces.Length)]);
+                //enemyGroup.Add(Enemy.enemyRaces[random.Next(0, Enemy.enemyRaces.Length)]); 
+                switch (random.Next(0, 3))
+                {
+                    case 0:
+                        enemyGroup.Add(new DarkElf());
+                        break;
+                    case 1:
+                        enemyGroup.Add(new Ogre());
+                        break;
+                    case 2:
+                        enemyGroup.Add(new Dwarf());
+                        break;
+                }
+                
             }
         }
 

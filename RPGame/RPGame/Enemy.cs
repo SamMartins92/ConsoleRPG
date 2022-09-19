@@ -67,7 +67,12 @@ namespace RPGame
         public Enemy()
         {
             mainWeapon = new Weapon();
+            strength = 5;
         }
 
+        public void Attack(Player player)
+        {
+            player._health -= strength;
+        }
     }
 }

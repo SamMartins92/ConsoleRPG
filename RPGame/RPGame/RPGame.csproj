@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DarkElf.cs" />
+    <Compile Include="Dwarf.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Environment.cs" />
     <Compile Include="Human.cs" />

@@ -11,6 +11,7 @@ namespace RPGame
         public Ogre()
         {
             _name = "Ogre";
+            _health = 50;
         }
     }
 }
