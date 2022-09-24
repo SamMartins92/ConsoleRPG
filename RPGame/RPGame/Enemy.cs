@@ -51,8 +51,6 @@ namespace RPGame
             new DarkElf(),
         };
 
-
-
         public int _level
         {
             get

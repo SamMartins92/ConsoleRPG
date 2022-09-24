@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGame
 {
-    internal class Item
+    public class Item
     {
     }
 }

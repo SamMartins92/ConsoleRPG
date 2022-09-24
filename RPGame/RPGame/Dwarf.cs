@@ -11,7 +11,7 @@ namespace RPGame
         public Dwarf()
         {
             _name = "Dwarf";
-            _health = 50;
+            _health = 40;
         }
     }
 }

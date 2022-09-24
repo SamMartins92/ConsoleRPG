@@ -34,6 +34,7 @@ namespace RPGame
         int health = 100;
         int movementSpeed;
         public int level;
+        public int score;
 
         public bool isArmed;
 
@@ -46,12 +47,13 @@ namespace RPGame
         public int _age { get { return age; } private set { age = value; } }
         public int _level { get { return level; } private set { level = value; } }
         public int _health { get { return health; } set { health = value; } }
-
         public int _defense { get { return defense; } set { defense = value; } }
         public int _movementSpeed { get { return movementSpeed; } private set { movementSpeed = value; } }
 
         public Weapon mainWeapon;
-        public Weapon SecondaryWeapon;
+        public Weapon secondaryWeapon;
+
+        public Inventory inventory;
 
         //Combat actions
 
@@ -63,18 +65,34 @@ namespace RPGame
         public void Attack(Enemy enemy)
         {
             enemy.health -= Player.Instance.strength;
+
+            if (enemy._health <= 0)
+            {
+                Player.Instance.score += 2; 
+            }
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="player"></param>
         /// <param name="enemy"></param>
-        void Defend(Enemy enemy)
+        public void Defend(List<Enemy> enemyGroup, int enemyNumber)
         {
-            Player.Instance.health -= enemy.strength;
+            foreach (var enemy in enemyGroup)
+            {
+                if (enemy == enemyGroup[enemyNumber - 1])
+                {
+                    Player.Instance._defense -= enemy.strength;
+                }
+                else
+                {
+                    enemy.Attack(Player.Instance);
+                }
+
+            }
         }
         /// <summary>
-        /// 
+        /// Chose main weapon
         /// </summary>
         /// <param name="player"></param>
         /// <param name="weaponType"></param>
@@ -82,6 +100,26 @@ namespace RPGame
         {
             mainWeapon = new Weapon(weaponType);
             CharacterManagment.AddStrength(10);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="consumable"></param>
+        public void TakeConsumable(Consumable consumable)
+        {
+            if (consumable is HealthPotion)
+            {
+                HealthPotion hPotion = consumable as HealthPotion;
+
+                Player.Instance._health += hPotion.heallingPower;
+            }
+            else if (consumable is StrengthPotion)
+            {
+                StrengthPotion sPotion = consumable as StrengthPotion;
+
+                Player.Instance._strength += sPotion.fortifyPower;
+            }
         }
     }
 }

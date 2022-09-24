@@ -27,7 +27,7 @@ namespace RPGame
         }
 
         /// <summary>
-        /// 
+        /// Randomly create a enemy group
         /// </summary>
         /// <param name="dificult"></param>
         void CreateEnemyGroup(int dificult)
@@ -67,6 +67,12 @@ namespace RPGame
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        void CreateShoppingScene()
+        {
 
+        }
     }
 }
