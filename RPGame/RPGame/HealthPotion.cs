@@ -8,6 +8,7 @@ namespace RPGame
 {
     internal class HealthPotion : Potion
     {
+        
         public int heallingPower = 5;
     }
 }

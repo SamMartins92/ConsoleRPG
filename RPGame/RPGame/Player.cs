@@ -55,6 +55,11 @@ namespace RPGame
 
         public Inventory inventory;
 
+        Player()
+        {
+            inventory = new Inventory();
+        }
+
         //Combat actions
 
         /// <summary>
@@ -110,9 +115,15 @@ namespace RPGame
         {
             if (consumable is HealthPotion)
             {
-                HealthPotion hPotion = consumable as HealthPotion;
-
-                Player.Instance._health += hPotion.heallingPower;
+                foreach (var item in inventory.items)
+                {
+                    if (item is HealthPotion)
+                    {
+                        HealthPotion healthPotion = (HealthPotion)item;
+                        Player.Instance._health += healthPotion.heallingPower;
+                    }
+                }
+                
             }
             else if (consumable is StrengthPotion)
             {

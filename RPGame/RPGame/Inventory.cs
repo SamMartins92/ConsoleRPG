@@ -10,7 +10,7 @@ namespace RPGame
     {
         int capacity;
 
-        public List<Item> items;
+        public List<Item> items = new List<Item>();
 
     }
 }

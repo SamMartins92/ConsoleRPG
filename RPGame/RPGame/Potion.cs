@@ -8,7 +8,7 @@ namespace RPGame
 {
     public class Potion : Consumable
     {
-
+        public bool wasUsed;
         public Potion()
         {
 

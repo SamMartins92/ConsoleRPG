@@ -43,12 +43,12 @@ namespace RPGame
         /// </summary>
         public static void Fight(Scene battleScene, List<Enemy> enemyGroup)
         {
+            IntroduceShoppingScene();
             do
             {
-                AttackTurn(battleScene, enemyGroup);
-                DefendTurn(battleScene, enemyGroup);
-                ConsumablesTurn(battleScene);
-
+                BattleTurn("consume", battleScene, enemyGroup);
+                BattleTurn("attack", battleScene, enemyGroup);
+                BattleTurn("defend", battleScene, enemyGroup);
             } while (battleScene.enemyGroup.Count > 0);
         }
 
@@ -62,43 +62,38 @@ namespace RPGame
             int consumableNumber = Int32.Parse(Console.ReadLine());
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="battleScene"></param>
-        /// <param name="enemyGroup"></param>
-        private static void DefendTurn(Scene battleScene, List<Enemy> enemyGroup)
+        private static void BattleTurn(string turnType, Scene battleScene, List<Enemy> enemyGroup)
         {
-            int enemyNumber;
+            RefreshBattleScene(battleScene, TurnMsg(turnType));
+            int numberChoice = Int32.Parse(Console.ReadLine());
 
-            RefreshBattleScene(battleScene, "It´s your turn to defend! Type the enemy number to defend him");
-            enemyNumber = Int32.Parse(Console.ReadLine());
-            Player.Instance.Defend(enemyGroup, enemyNumber);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="battleScene"></param>
-        /// <param name="enemyGroup"></param>
-        /// <returns></returns>
-        private static int AttackTurn(Scene battleScene, List<Enemy> enemyGroup)
-        {
-            RefreshBattleScene(battleScene, "It´s your turn to attack! Type the enemy number to attack him");
-            int enemyNumber = Int32.Parse(Console.ReadLine());
-
-            if (enemyNumber == enemyGroup.Count || enemyNumber < enemyGroup.Count)
+            if (numberChoice == enemyGroup.Count || numberChoice < enemyGroup.Count)
             {
-                Player.Instance.Attack(enemyGroup.ElementAt(enemyGroup.Count - enemyNumber));
+                switch (turnType)
+                {
+                    case "attack": Player.Instance.Attack(enemyGroup.ElementAt(enemyGroup.Count - numberChoice)); break;
+                    case "defend": Player.Instance.Defend(enemyGroup, numberChoice); break;
+                    case "consume":
+                        HealthPotion  hPotion = new HealthPotion();
+                        Player.Instance.TakeConsumable(hPotion); break;
+                        break;
+                    default: 
+                        break;
+                }
             }
             else
             {
                 RefreshBattleScene(battleScene, "That enemy number doesnt exist! Choose another one");
-                enemyNumber = Int32.Parse(Console.ReadLine());
-                Player.Instance.Attack(enemyGroup.ElementAt(enemyGroup.Count - enemyNumber));
+                numberChoice = Int32.Parse(Console.ReadLine());
+                switch (turnType)
+                {
+                    case "attack": Player.Instance.Attack(enemyGroup.ElementAt(enemyGroup.Count - numberChoice)); break;
+                    case "defend": Player.Instance.Defend(enemyGroup, numberChoice); break;
+                    default: break;
+                }
+
             }
 
-            return enemyNumber;
         }
 
         /// <summary>
@@ -138,14 +133,18 @@ namespace RPGame
         public static void IntroduceShoppingScene()
         {
             Console.WriteLine("Buy something that you think can help you");
+            Console.WriteLine("(1)Health potion" + "  " + "(2)Strengh potion");
+
             string itemToBuy = Console.ReadLine();
 
             switch (itemToBuy)
             {
                 case "1":
-
+                    Player.Instance.inventory.items.Add(new HealthPotion());
                     break;
-
+                case "2":
+                    Player.Instance.inventory.items.Add(new StrengthPotion());
+                    break;
             }
         }
 
@@ -157,6 +156,23 @@ namespace RPGame
             Console.WriteLine();
         }
 
-
+        public static string TurnMsg(string turnType)
+        {
+            switch (turnType)
+            {
+                case "attack": 
+                    return "It´s your turn to attack! Type the enemy number to attack him";
+                    break;
+                case "defend":
+                    return "It´s your turn to defend! Type the enemy number to defend him";
+                    break;
+                case "consume":
+                    return "It´s your turn to use consumables! Type the item number to consume it";
+                    break;
+                default:
+                    return "That doesnt exists";
+                    break;
+            }
+        }
     }
 }
