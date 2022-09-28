@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPGame
 {
-    public class Weapon
+    public class Weapon : Item
     {
         
         public string name;

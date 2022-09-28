@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace RPGame
 {
-    public class DarkElf : Enemy
+    internal class HealthPotion : Potion
     {
-        public DarkElf()
-        {
-            _name = "Dark Elf";
-            _health = 30;
-        }
+        
+        public int heallingPower = 5;
     }
 }

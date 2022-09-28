@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 namespace RPGame
 {
     internal class Program
-    {
+    {     
         static void Main(string[] args)
         {
             ShowMensage.IntroduceStartUpScene();
-            ShowMensage.IntroduceBattleScene();
+            ShowMensage.IntroduceShoppingScene();
+            ShowMensage.IntroduceNewBattleScene();
         }
     }
 }
