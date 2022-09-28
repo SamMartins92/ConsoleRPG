@@ -13,16 +13,9 @@ namespace RPGame
         /// </summary>
         public static void IntroducePlayer()
         {
-<<<<<<< HEAD
-            foreach (var enemy in battleScene.enemyGroup)
-            {
-                Console.WriteLine("There is an " + enemy._name + " " + "Health: "+ enemy._health + "   Weapon: " + enemy.mainWeapon.thisWeaponType.ToString() + " " + " lvl: " + enemy._level);
-            }
-=======
             Console.WriteLine("");
             Console.WriteLine("Player: " + Player.Instance._name + "Health: " + Player.Instance._health + " " + "Weapon: " + Player.Instance.mainWeapon.thisWeaponType.ToString() + " lvl: " + Player.Instance._level + "                 " + "Score:" + Player.Instance.score + "   " + "Money:" + Player.Instance.wallet.ToString());
             Console.WriteLine("");
->>>>>>> feature/RPG-9-create-attack-and-defend-turns
         }
 
         /// <summary>
