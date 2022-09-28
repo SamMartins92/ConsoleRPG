@@ -35,6 +35,7 @@ namespace RPGame
         int movementSpeed;
         public int level;
         public int score;
+        public int wallet;
 
         public bool isArmed;
 
@@ -83,18 +84,25 @@ namespace RPGame
         /// <param name="enemy"></param>
         public void Defend(List<Enemy> enemyGroup, int enemyNumber)
         {
-            foreach (var enemy in enemyGroup)
+            if (enemyNumber <= enemyGroup.Count)
             {
-                if (enemy == enemyGroup[enemyNumber - 1])
+                foreach (var enemy in enemyGroup)
                 {
-                    Player.Instance._defense -= enemy.strength;
+                    if (enemy == enemyGroup[enemyNumber - 1])
+                    {
+                        Player.Instance._defense -= enemy.strength;
+                    }
+                    else
+                    {
+                        enemy.Attack(Player.Instance);
+                    }
                 }
-                else
-                {
-                    enemy.Attack(Player.Instance);
-                }
-
             }
+            else
+            {
+                Console.WriteLine("Choose a valid enemy number");
+            }
+            
         }
         /// <summary>
         /// Chose main weapon
@@ -113,17 +121,29 @@ namespace RPGame
         /// <param name="consumable"></param>
         public void TakeConsumable(Consumable consumable)
         {
+            beginning:
             if (consumable is HealthPotion)
             {
-                foreach (var item in inventory.items)
+                bool foundIt = false;
+
+                for (int i = 0; i < inventory.items.Count(); i++)
                 {
-                    if (item is HealthPotion)
+                    if (inventory.items[i] is HealthPotion)
                     {
-                        HealthPotion healthPotion = (HealthPotion)item;
+                        HealthPotion healthPotion = (HealthPotion)inventory.items[i];
                         Player.Instance._health += healthPotion.heallingPower;
+                        inventory.items.RemoveAt(i);
+                        Console.WriteLine("You added " + healthPotion.heallingPower.ToString());
+                        foundIt = true;
+                        break;
                     }
                 }
-                
+                if (!foundIt) 
+                {
+                    Console.WriteLine("You dont have any heal potion, press enter to continue or 1 to use another consumable");
+                    string response = Console.ReadLine();
+                    if (response == "1") goto beginning;
+                }
             }
             else if (consumable is StrengthPotion)
             {

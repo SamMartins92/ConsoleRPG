@@ -11,7 +11,8 @@ namespace RPGame
         static void Main(string[] args)
         {
             ShowMensage.IntroduceStartUpScene();
-            ShowMensage.IntroduceBattleScene();
+            ShowMensage.IntroduceShoppingScene();
+            ShowMensage.IntroduceNewBattleScene();
         }
     }
 }
