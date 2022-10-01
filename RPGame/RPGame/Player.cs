@@ -32,6 +32,7 @@ namespace RPGame
         int strength;
         int defense;
         int health = 100;
+        int mana = 100;
         int movementSpeed;
         public int level;
         public int score;
